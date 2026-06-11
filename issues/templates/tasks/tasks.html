@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block nav %}
-    <a class="btn btn-primary btn-m" href="{% url 'create_task' %}">Добавить задачу</a>
+    <a class="btn btn-primary btn-m" href="{% url 'create_issue' %}">Добавить задачу</a>
 {% endblock %}
 
 {% block content %}
@@ -19,16 +19,16 @@
             </tr>
         </thead>
         <tbody>
-            {% for task in tasks %}
+            {% for issue in issues %}
             <tr>
-                <td><input type="checkbox" name="id_list" value="{{ task.id }}" class="task-checkbox"></td>
-                <td>{{ task.title }}</td>
-                <td>{{ task.status }}</td>
-                <td>{{ task.deadline }}</td>
+                <td><input type="checkbox" name="id_list" value="{{ issue.id }}" class="issue-checkbox"></td>
+                <td>{{ issue.title }}</td>
+                <td>{{ issue.status }}</td>
+                <td>{{ issue.deadline }}</td>
                 <td>
-                    <a href="{% url 'details' task.id %}" class="text-decoration-none text-primary">Подробнее</a> /
-                     <a href="{% url 'update_task' task.id %}" class="text-decoration-none text-success">Изменить </a>/
-                    <a href="{% url 'delete_task' task.id %}" class="text-decoration-none text-danger">Удалить</a>
+                    <a href="{% url 'details' issue.id %}" class="text-decoration-none text-primary">Подробнее</a> /
+                     <a href="{% url 'update_issue' issue.id %}" class="text-decoration-none text-success">Изменить </a>/
+                    <a href="{% url 'delete_issue' issue.id %}" class="text-decoration-none text-danger">Удалить</a>
                 </td>
             </tr>
             {% empty %}

@@ -1,10 +1,10 @@
 from django import forms
-from .models import Task
+from issues.models.issue import Issue
 
 
-class TaskForm(forms.ModelForm):
+class IssueForm(forms.ModelForm):
     class Meta:
-        model = Task
+        model = Issue
         fields = ('title', 'description' ,'status', 'deadline')
         widgets = {
             'title': forms.TextInput(attrs={
