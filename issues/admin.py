@@ -6,7 +6,7 @@ from issues.models import Type
 
 
 class IssueAdmin(admin.ModelAdmin):
-    list_display = ("id", "summary", "status", "type", "created_at", "updated_at")
+    list_display = ("id", "summary", "status", "created_at", "updated_at")
     list_filter = ("status", "type")
     search_fields = ("summary", "description")
 

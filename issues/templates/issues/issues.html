@@ -26,7 +26,11 @@
                 <tr>
                     <td><input type="checkbox" name="id_list" value="{{ issue.id }}"></td>
                     <td>{{ issue.summary }}</td>
-                    <td>{{ issue.type }}</td>
+                    <td>
+                        {% for type in issue.type.all %}
+                            <span class="badge bg-secondary">{{ type.name }}</span>
+                        {% endfor %}
+                    </td>
                     <td>{{ issue.status }}</td>
                     <td>{{ issue.created_at }}</td>
                     <td>{{ issue.updated_at }}</td>

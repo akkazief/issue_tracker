@@ -43,38 +43,16 @@
 },
 {
   "model": "issues.issue",
-  "pk": 1,
-  "fields": {
-    "summary": "Сделать дз",
-    "description": "Закончить дз 57. Отредактировано",
-    "status": 2,
-    "type": 4,
-    "created_at": "2026-06-11T08:37:52.658Z",
-    "updated_at": "2026-06-11T08:41:26.566Z"
-  }
-},
-{
-  "model": "issues.issue",
   "pk": 2,
   "fields": {
     "summary": "Исправить ошибки в коде",
     "description": "Испрвить ошибки на которые мне указали в прошлой дз",
     "status": 4,
-    "type": 6,
     "created_at": "2026-06-11T08:38:29.748Z",
-    "updated_at": "2026-06-11T08:38:29.748Z"
-  }
-},
-{
-  "model": "issues.issue",
-  "pk": 3,
-  "fields": {
-    "summary": "Вспомнить бд",
-    "description": "Парам папарам",
-    "status": 1,
-    "type": 4,
-    "created_at": "2026-06-11T08:38:55.476Z",
-    "updated_at": "2026-06-11T08:38:55.476Z"
+    "updated_at": "2026-06-11T10:55:01.920Z",
+    "type": [
+      4
+    ]
   }
 },
 {
@@ -83,10 +61,14 @@
   "fields": {
     "summary": "Починить упавший сервер",
     "description": "Починить сервер по причине неправильного нейминга",
-    "status": 1,
-    "type": 5,
+    "status": 2,
     "created_at": "2026-06-11T08:39:41.812Z",
-    "updated_at": "2026-06-11T08:39:41.812Z"
+    "updated_at": "2026-06-11T10:56:07.888Z",
+    "type": [
+      4,
+      5,
+      6
+    ]
   }
 },
 {
@@ -96,9 +78,40 @@
     "summary": "Улучшить фронт",
     "description": "сделать красивый фронт",
     "status": 2,
-    "type": 6,
     "created_at": "2026-06-11T08:40:44.782Z",
-    "updated_at": "2026-06-11T08:41:00.271Z"
+    "updated_at": "2026-06-11T10:54:37.313Z",
+    "type": [
+      5
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 7,
+  "fields": {
+    "summary": "alsdmsad",
+    "description": "asd",
+    "status": 1,
+    "created_at": "2026-06-11T10:04:52.372Z",
+    "updated_at": "2026-06-11T10:54:26.053Z",
+    "type": [
+      6
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 8,
+  "fields": {
+    "summary": "aaaa",
+    "description": "a",
+    "status": 1,
+    "created_at": "2026-06-11T10:09:09.383Z",
+    "updated_at": "2026-06-11T10:49:43.522Z",
+    "type": [
+      4,
+      5
+    ]
   }
 },
 {

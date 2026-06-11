@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, get_object_or_404
+from django.shortcuts import redirect, get_object_or_404, render
 
 from django.views.generic import TemplateView
 
@@ -40,10 +40,12 @@ class CreateIssueView(TemplateView):
 
     def post(self, request, *args, **kwargs):
         form = IssueForm(request.POST)
+
         if form.is_valid():
-            form.save()
-            return redirect("main")
-        return self.render_to_response(self.get_context_data(form=form))
+            issue = form.save()
+            issue.type.set(form.cleaned_data['type'])
+            return redirect('main')
+        return render(request, 'issues/create_issue.html', {'form': form})
 
 
 class UpdateIssueView(TemplateView):
@@ -60,9 +62,10 @@ class UpdateIssueView(TemplateView):
         issue = get_object_or_404(Issue, pk=self.kwargs.get("pk"))
         form = IssueForm(request.POST, instance=issue)
         if form.is_valid():
-            form.save()
-            return redirect("details", pk=issue.pk)
-        return self.render_to_response(self.get_context_data(form=form))
+            issue = form.save()
+            issue.type.set(form.cleaned_data['type'])
+            return redirect('main')
+        return render(request, 'issues/create_issue.html', {'form': form})
 
 
 class DeleteIssueView(TemplateView):
