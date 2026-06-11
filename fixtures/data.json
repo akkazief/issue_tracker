@@ -1,0 +1,122 @@
+[
+{
+  "model": "issues.status",
+  "pk": 1,
+  "fields": {
+    "name": "New"
+  }
+},
+{
+  "model": "issues.status",
+  "pk": 2,
+  "fields": {
+    "name": "In Progress"
+  }
+},
+{
+  "model": "issues.status",
+  "pk": 4,
+  "fields": {
+    "name": "Done"
+  }
+},
+{
+  "model": "issues.type",
+  "pk": 4,
+  "fields": {
+    "name": "Task"
+  }
+},
+{
+  "model": "issues.type",
+  "pk": 5,
+  "fields": {
+    "name": "Bug"
+  }
+},
+{
+  "model": "issues.type",
+  "pk": 6,
+  "fields": {
+    "name": "Enhancement"
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 1,
+  "fields": {
+    "summary": "Сделать дз",
+    "description": "Закончить дз 57. Отредактировано",
+    "status": 2,
+    "type": 4,
+    "created_at": "2026-06-11T08:37:52.658Z",
+    "updated_at": "2026-06-11T08:41:26.566Z"
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 2,
+  "fields": {
+    "summary": "Исправить ошибки в коде",
+    "description": "Испрвить ошибки на которые мне указали в прошлой дз",
+    "status": 4,
+    "type": 6,
+    "created_at": "2026-06-11T08:38:29.748Z",
+    "updated_at": "2026-06-11T08:38:29.748Z"
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 3,
+  "fields": {
+    "summary": "Вспомнить бд",
+    "description": "Парам папарам",
+    "status": 1,
+    "type": 4,
+    "created_at": "2026-06-11T08:38:55.476Z",
+    "updated_at": "2026-06-11T08:38:55.476Z"
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 4,
+  "fields": {
+    "summary": "Починить упавший сервер",
+    "description": "Починить сервер по причине неправильного нейминга",
+    "status": 1,
+    "type": 5,
+    "created_at": "2026-06-11T08:39:41.812Z",
+    "updated_at": "2026-06-11T08:39:41.812Z"
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 5,
+  "fields": {
+    "summary": "Улучшить фронт",
+    "description": "сделать красивый фронт",
+    "status": 2,
+    "type": 6,
+    "created_at": "2026-06-11T08:40:44.782Z",
+    "updated_at": "2026-06-11T08:41:00.271Z"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$991qPeeHfEiz8018S0NTS0$tfZTLiuz6qVfqvFV63MLOE8mUWDuf1T2kZgB0u/a7kQ=",
+    "last_login": "2026-06-11T08:27:36.358Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-11T08:27:08.407Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
