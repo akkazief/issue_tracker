@@ -5,52 +5,106 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Status',
+            name="Status",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100, verbose_name='Название')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100, verbose_name="Название")),
             ],
             options={
-                'verbose_name': 'Статус',
-                'verbose_name_plural': 'Статусы',
-                'db_table': 'statuses',
+                "verbose_name": "Статус",
+                "verbose_name_plural": "Статусы",
+                "db_table": "statuses",
             },
         ),
         migrations.CreateModel(
-            name='Type',
+            name="Type",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100, verbose_name='Название')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100, verbose_name="Название")),
             ],
             options={
-                'verbose_name': 'Тип',
-                'verbose_name_plural': 'Типы',
-                'db_table': 'types',
+                "verbose_name": "Тип",
+                "verbose_name_plural": "Типы",
+                "db_table": "types",
             },
         ),
         migrations.CreateModel(
-            name='Issue',
+            name="Issue",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('summary', models.CharField(max_length=100, verbose_name='Краткое описание')),
-                ('description', models.TextField(blank=True, null=True, verbose_name='Полное описание')),
-                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Время создания')),
-                ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Время обновления')),
-                ('status', models.ForeignKey(on_delete=django.db.models.deletion.RESTRICT, to='issues.status', verbose_name='Статус')),
-                ('type', models.ForeignKey(on_delete=django.db.models.deletion.RESTRICT, to='issues.type', verbose_name='Тип')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "summary",
+                    models.CharField(max_length=100, verbose_name="Краткое описание"),
+                ),
+                (
+                    "description",
+                    models.TextField(
+                        blank=True, null=True, verbose_name="Полное описание"
+                    ),
+                ),
+                (
+                    "created_at",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="Время создания"
+                    ),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(
+                        auto_now=True, verbose_name="Время обновления"
+                    ),
+                ),
+                (
+                    "status",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.RESTRICT,
+                        to="issues.status",
+                        verbose_name="Статус",
+                    ),
+                ),
+                (
+                    "type",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.RESTRICT,
+                        to="issues.type",
+                        verbose_name="Тип",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Задание',
-                'verbose_name_plural': 'Задания',
-                'db_table': 'issues',
+                "verbose_name": "Задание",
+                "verbose_name_plural": "Задания",
+                "db_table": "issues",
             },
         ),
     ]

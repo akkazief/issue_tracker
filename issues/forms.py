@@ -10,21 +10,29 @@ class IssueForm(forms.ModelForm):
 
     class Meta:
         model = Issue
-        fields = ('summary', 'description', 'status', 'type')
+        fields = ("summary", "description", "status", "type")
         widgets = {
-            'summary': forms.TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Краткое описание задачи',
-            }),
-            'description': forms.Textarea(attrs={
-                'class': 'form-control',
-                'rows': 4,
-                'placeholder': 'Полное описание задачи',
-            }),
-            'status': forms.Select(attrs={
-                'class': 'form-control',
-            }),
-            'type': forms.Select(attrs={
-                'class': 'form-control',
-            }),
+            "summary": forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "Краткое описание задачи",
+                }
+            ),
+            "description": forms.Textarea(
+                attrs={
+                    "class": "form-control",
+                    "rows": 4,
+                    "placeholder": "Полное описание задачи",
+                }
+            ),
+            "status": forms.Select(
+                attrs={
+                    "class": "form-control",
+                }
+            ),
+            "type": forms.Select(
+                attrs={
+                    "class": "form-control",
+                }
+            ),
         }
