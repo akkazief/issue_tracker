@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+ 
+{% block content %}
+    <div class="card my-5" style="max-width: 500px; margin: auto;">
+        <div class="card-header fs-5 text-center py-3 text-danger">Удаление задачи</div>
+        <div class="card-body text-center">
+            <p class="fs-5">Вы уверены, что хотите удалить задачу</p>
+            <p class="fw-bold fs-4">«{{ task.title }}»?</p>
+        </div>
+        <div class="card-footer d-flex justify-content-end gap-2 py-3">
+            <a href="{% url 'details' task.pk %}" class="btn btn-secondary">Отмена</a>
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Удалить</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
