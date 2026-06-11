@@ -1,54 +1,76 @@
 from django.shortcuts import render, redirect,get_object_or_404
 
+from django.views.generic import TemplateView
+
 from issues.models.issue import Issue
 from issues.forms import IssueForm
 
+class IssuesView(TemplateView):
+    template_name = "issues/issues.html"
 
-def issues(request):
-    if request.method == 'POST':
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['issues'] = Issue.objects.all().order_by('-updated_at')
+        return context
+
+    def post(self, request, *args, **kwargs):
         id_list = request.POST.getlist('id_list')
         if id_list:
-            issues = Issue.objects.filter(id__in=id_list)
-            issues.delete()
-            return redirect('main')
+            Issue.objects.filter(id__in=id_list).delete()
+        return redirect('main')
 
-    issues = Issue.objects.all()
-    context = {'issues': issues}
-    return render(request, 'issues/issues.html', context)
+class IssuesDetailView(TemplateView):
+    template_name = "issues/issue_details.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['issue'] = get_object_or_404(Issue, pk=self.kwargs.get('pk'))
+        return context
 
-def details(request, *args, pk, **kwargs):
-    issue = get_object_or_404(Issue, pk=pk)
-    context = {'issue': issue}
-    return render(request, "issues/details.html", context)
+class CreateIssueView(TemplateView):
+    template_name = "issues/create_issue.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = IssueForm()
+        return context
 
-def create_issue(request):
-    if request.method == 'POST':
+    def post(self, request, *args, **kwargs):
         form = IssueForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('main')
-    else:
-        form = IssueForm()
-    return render(request, 'issues/create_issue.html', {'form': form})
+        return self.render_to_response(self.get_context_data(form=form))
 
-def update_issue(request, pk):
-    issue = get_object_or_404(Issue, pk=pk)
-    if request.method == 'POST':
+
+class UpdateIssueView(TemplateView):
+    template_name = "issues/issue_update.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        issue = get_object_or_404(Issue, pk=self.kwargs.get('pk'))
+        context['issue'] = issue
+        context['form'] = IssueForm(instance=issue)
+        return context
+
+    def post(self, request, *args, **kwargs):
+        issue = get_object_or_404(Issue, pk=self.kwargs.get('pk'))
         form = IssueForm(request.POST, instance=issue)
         if form.is_valid():
             form.save()
             return redirect('details', pk=issue.pk)
-    else:
-        form = IssueForm(instance=issue)
-    return render(request, 'issues/issue_update.html', {'form': form, 'issue': issue})
+        return self.render_to_response(self.get_context_data(form=form))
 
 
-def delete_issue(request, pk):
-    issue = get_object_or_404(Issue, pk=pk)
-    if request.method == 'POST':
+class DeleteIssueView(TemplateView):
+    template_name = "issues/delete_issue.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['issue'] = get_object_or_404(Issue, pk=self.kwargs.get('pk'))
+        return context
+
+    def post(self, request, *args, **kwargs):
+        issue = get_object_or_404(Issue, pk=self.kwargs.get('pk'))
         issue.delete()
         return redirect('main')
-    return render(request, 'issues/delete_issue.html', {'issue': issue})
-

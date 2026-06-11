@@ -5,7 +5,7 @@
         <div class="card-header fs-5 text-center py-3 text-danger">Удаление задачи</div>
         <div class="card-body text-center">
             <p class="fs-5">Вы уверены, что хотите удалить задачу</p>
-            <p class="fw-bold fs-4">«{{ issue.title }}»?</p>
+            <p class="fw-bold fs-4">«{{ issue.summary }}»?</p>
         </div>
         <div class="card-footer d-flex justify-content-end gap-2 py-3">
             <a href="{% url 'details' issue.pk %}" class="btn btn-secondary">Отмена</a>
