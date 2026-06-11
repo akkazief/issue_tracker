@@ -1,24 +1,30 @@
 from django import forms
 from issues.models.issue import Issue
+from issues.models.status import Status
+from issues.models.type import Type
 
 
 class IssueForm(forms.ModelForm):
+    status = forms.ModelChoiceField(queryset=Status.objects.all())
+    type = forms.ModelChoiceField(queryset=Type.objects.all())
+
     class Meta:
         model = Issue
-        fields = ('title', 'description' ,'status', 'deadline')
+        fields = ('summary', 'description', 'status', 'type')
         widgets = {
-            'title': forms.TextInput(attrs={
+            'summary': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Введите ваше описание',}),
+                'placeholder': 'Краткое описание задачи',
+            }),
             'description': forms.Textarea(attrs={
                 'class': 'form-control',
-                'placeholder': 'Поле для детального описания'
+                'rows': 4,
+                'placeholder': 'Полное описание задачи',
             }),
             'status': forms.Select(attrs={
                 'class': 'form-control',
             }),
-            'deadline': forms.DateInput(attrs={
+            'type': forms.Select(attrs={
                 'class': 'form-control',
-                'type': 'date',
-            })
+            }),
         }
