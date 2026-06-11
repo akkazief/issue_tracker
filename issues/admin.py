@@ -1,11 +1,14 @@
 from django.contrib import admin
 
-from issues.models.issue_model import Task
+from issues.models import Issue
+from issues.models import Status
+from issues.models import Type
 
-class TaskAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'status', 'deadline')
-    list_filter = ('title', 'status', 'deadline')
-    search_fields = ('title', 'status', 'deadline')
-    fields = ('title', 'status', 'deadline')
+class IssueAdmin(admin.ModelAdmin):
+    list_display = ('id', 'summary', 'status', 'type', 'created_at', 'updated_at')
+    list_filter = ('status', 'type')
+    search_fields = ('summary', 'description')
 
-admin.site.register(Task, TaskAdmin)
+admin.site.register(Issue, IssueAdmin)
+admin.site.register(Status)
+admin.site.register(Type)
