@@ -6,7 +6,11 @@ from issues.models.type import Type
 
 class IssueForm(forms.ModelForm):
     status = forms.ModelChoiceField(queryset=Status.objects.all())
-    type = forms.ModelChoiceField(queryset=Type.objects.all())
+
+    type = forms.ModelMultipleChoiceField(
+        queryset=Type.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=False,)
 
     class Meta:
         model = Issue

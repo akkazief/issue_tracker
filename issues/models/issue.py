@@ -10,7 +10,7 @@ class Issue(models.Model):
         verbose_name="Полное описание", null=True, blank=True
     )
     status = models.ForeignKey(Status, on_delete=models.RESTRICT, verbose_name="Статус")
-    type = models.ForeignKey(Type, on_delete=models.RESTRICT, verbose_name="Тип")
+    type = models.ManyToManyField(Type, related_name="issues", verbose_name="Тип")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Время обновления")
 
