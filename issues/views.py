@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, get_object_or_404, render
 
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, FormView
+from django.urls import reverse_lazy
 
 from issues.models.issue import Issue
 from issues.forms import IssueForm
@@ -29,43 +30,38 @@ class IssuesDetailView(TemplateView):
         context["issue"] = get_object_or_404(Issue, pk=self.kwargs.get("pk"))
         return context
 
-
-class CreateIssueView(TemplateView):
+class CreateIssueView(FormView):
     template_name = "issues/create_issue.html"
+    form_class = IssueForm
+    success_url = reverse_lazy("main")
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["form"] = IssueForm()
-        return context
-
-    def post(self, request, *args, **kwargs):
-        form = IssueForm(request.POST)
-
-        if form.is_valid():
-            issue = form.save()
-            issue.type.set(form.cleaned_data['type'])
-            return redirect('main')
-        return render(request, 'issues/create_issue.html', {'form': form})
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
 
 
-class UpdateIssueView(TemplateView):
+class UpdateIssueView(FormView):
     template_name = "issues/issue_update.html"
+    form_class = IssueForm
+
+    def dispatch(self, request, *args, **kwargs):
+        self.issue = get_object_or_404(Issue, pk=self.kwargs['pk'])
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['instance'] = self.issue
+        return kwargs
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        issue = get_object_or_404(Issue, pk=self.kwargs.get("pk"))
-        context["issue"] = issue
-        context["form"] = IssueForm(instance=issue)
+        context['issue'] = self.issue
         return context
 
-    def post(self, request, *args, **kwargs):
-        issue = get_object_or_404(Issue, pk=self.kwargs.get("pk"))
-        form = IssueForm(request.POST, instance=issue)
-        if form.is_valid():
-            issue = form.save()
-            issue.type.set(form.cleaned_data['type'])
-            return redirect('main')
-        return render(request, 'issues/create_issue.html', {'form': form})
+    def form_valid(self, form):
+        issue = form.save()
+        issue.type.set(form.cleaned_data['type'])
+        return redirect('main')
 
 
 class DeleteIssueView(TemplateView):
