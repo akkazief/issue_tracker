@@ -2,8 +2,8 @@ from django.core.exceptions import ValidationError
 
 
 def validate_summary_length(value):
-    if len(value) < 5:
-        raise ValidationError("Краткое описание должно быть не менее 5 символов.")
+    if len(value) < 2:
+        raise ValidationError("Краткое описание должно быть не менее 3 символов.")
 
 
 def validate_exlude_words(value):

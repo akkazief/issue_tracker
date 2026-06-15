@@ -47,9 +47,5 @@ class IssueForm(forms.ModelForm):
     def clean_summary(self):
         summary = self.cleaned_data.get("summary")
         validate_summary_length(summary)
+        validate_exlude_words(summary)
         return summary
-
-    def clean_description(self):
-        description = self.cleaned_data.get("description")
-        validate_exlude_words(description)
-        return description
