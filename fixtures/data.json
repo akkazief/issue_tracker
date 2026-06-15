@@ -48,8 +48,8 @@
     "summary": "Исправить ошибки в коде",
     "description": "Испрвить ошибки на которые мне указали в прошлой дз",
     "status": 4,
-    "created_at": "2026-06-11T08:38:29.748Z",
-    "updated_at": "2026-06-11T10:55:01.920Z",
+    "created_at": "2026-04-11T08:38:29.748Z",
+    "updated_at": "2026-04-11T10:55:01.920Z",
     "type": [
       4
     ]
@@ -63,7 +63,7 @@
     "description": "Починить сервер по причине неправильного нейминга",
     "status": 2,
     "created_at": "2026-06-11T08:39:41.812Z",
-    "updated_at": "2026-06-11T10:56:07.888Z",
+    "updated_at": "2026-06-15T07:55:32.297Z",
     "type": [
       4,
       5,
@@ -87,13 +87,27 @@
 },
 {
   "model": "issues.issue",
-  "pk": 7,
+  "pk": 12,
   "fields": {
-    "summary": "alsdmsad",
-    "description": "asd",
-    "status": 1,
-    "created_at": "2026-06-11T10:04:52.372Z",
-    "updated_at": "2026-06-11T10:54:26.053Z",
+    "summary": "Пофиксить PEP8",
+    "description": "",
+    "status": 4,
+    "created_at": "2026-04-15T08:35:57.492Z",
+    "updated_at": "2026-04-15T08:36:02.169Z",
+    "type": [
+      5
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 13,
+  "fields": {
+    "summary": "Улучшить PEP8",
+    "description": "через ruff подкорректировать код",
+    "status": 4,
+    "created_at": "2026-04-21T08:37:00.031Z",
+    "updated_at": "2026-04-21T08:37:00.031Z",
     "type": [
       6
     ]
@@ -101,16 +115,146 @@
 },
 {
   "model": "issues.issue",
-  "pk": 8,
+  "pk": 14,
   "fields": {
-    "summary": "aaaa",
-    "description": "a",
+    "summary": "Создать форму для админов",
+    "description": "сделать редактирование всех полей формы через админа",
+    "status": 2,
+    "created_at": "2026-06-15T08:39:55.394Z",
+    "updated_at": "2026-06-15T08:39:55.394Z",
+    "type": [
+      4
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 15,
+  "fields": {
+    "summary": "Bug_1",
+    "description": "Bug_1",
     "status": 1,
-    "created_at": "2026-06-11T10:09:09.383Z",
-    "updated_at": "2026-06-11T10:49:43.522Z",
+    "created_at": "2026-06-15T08:40:30.426Z",
+    "updated_at": "2026-06-15T08:40:30.426Z",
+    "type": [
+      5,
+      6
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 16,
+  "fields": {
+    "summary": "Bug_2",
+    "description": "bug_2",
+    "status": 1,
+    "created_at": "2026-06-15T08:40:52.618Z",
+    "updated_at": "2026-06-15T08:40:52.618Z",
+    "type": [
+      4
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 17,
+  "fields": {
+    "summary": "Done_1",
+    "description": "don",
+    "status": 4,
+    "created_at": "2026-06-03T08:41:19.858Z",
+    "updated_at": "2026-06-03T08:41:19.858Z",
+    "type": [
+      4,
+      5,
+      6
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 18,
+  "fields": {
+    "summary": "done_2",
+    "description": "awdwadawd",
+    "status": 4,
+    "created_at": "2026-06-07T08:41:35.073Z",
+    "updated_at": "2026-06-07T08:41:35.073Z",
+    "type": [
+      4
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 19,
+  "fields": {
+    "summary": "bug_3",
+    "description": "that should not be shown in third task",
+    "status": 4,
+    "created_at": "2026-06-01T08:43:20.033Z",
+    "updated_at": "2026-06-01T08:43:20.033Z",
     "type": [
       4,
       5
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 20,
+  "fields": {
+    "summary": "Similar_1",
+    "description": "Similar_1",
+    "status": 2,
+    "created_at": "2026-06-15T08:46:12.181Z",
+    "updated_at": "2026-06-15T08:46:12.181Z",
+    "type": [
+      6
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 21,
+  "fields": {
+    "summary": "similar_2",
+    "description": "similiar_2",
+    "status": 4,
+    "created_at": "2026-05-27T08:46:38.762Z",
+    "updated_at": "2026-05-27T08:46:38.762Z",
+    "type": [
+      4
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 22,
+  "fields": {
+    "summary": "Enhancment",
+    "description": "Enhancment",
+    "status": 2,
+    "created_at": "2026-06-15T08:49:13.494Z",
+    "updated_at": "2026-06-15T08:49:13.494Z",
+    "type": [
+      6
+    ]
+  }
+},
+{
+  "model": "issues.issue",
+  "pk": 23,
+  "fields": {
+    "summary": "no_bug",
+    "description": "no_bug",
+    "status": 4,
+    "created_at": "2026-05-20T08:49:44.725Z",
+    "updated_at": "2026-05-20T08:49:44.725Z",
+    "type": [
+      5,
+      6
     ]
   }
 },
