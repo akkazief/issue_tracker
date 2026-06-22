@@ -1,6 +1,6 @@
 from urllib.parse import urlencode
 from django.db.models import Q
-from issues.models import SimpleSearchForm
+from issues.forms import SimpleSearchForm
 from django.views.generic import ListView
 
 from issues.models import Project
@@ -32,7 +32,7 @@ class ProjectsView(ListView):
 
         if self.search_value:
             queryset = queryset.filter(
-                Q(title__icontains=self.search_value) | Q(author__icontains=self.search_value)
+                Q(name__icontains=self.search_value) | Q(description__icontains=self.search_value)
             )
         return queryset
 

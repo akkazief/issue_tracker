@@ -6,7 +6,7 @@
 
  {% block search %}
     <form method="GET" class="d-flex gap-2">
-        <input type="search" name="query" value="{{ request.GET.query }}"
+        <input type="search" name="search" value="{{ search_value }}"
                class="form-control" placeholder="Поиск..." aria-label="Search">
     <button type="submit" class="btn btn-dark">Найти</button>
 </form>
