@@ -49,7 +49,8 @@
     "description": "Испрвить ошибки на которые мне указали в прошлой дз",
     "status": 4,
     "created_at": "2026-04-11T08:38:29.748Z",
-    "updated_at": "2026-04-11T10:55:01.920Z",
+    "updated_at": "2026-06-22T05:01:23.376Z",
+    "project": 1,
     "type": [
       4
     ]
@@ -63,7 +64,8 @@
     "description": "Починить сервер по причине неправильного нейминга",
     "status": 2,
     "created_at": "2026-06-11T08:39:41.812Z",
-    "updated_at": "2026-06-15T07:55:32.297Z",
+    "updated_at": "2026-06-22T05:01:23.378Z",
+    "project": 1,
     "type": [
       4,
       5,
@@ -79,7 +81,8 @@
     "description": "сделать красивый фронт",
     "status": 2,
     "created_at": "2026-06-11T08:40:44.782Z",
-    "updated_at": "2026-06-11T10:54:37.313Z",
+    "updated_at": "2026-06-22T05:01:23.379Z",
+    "project": 1,
     "type": [
       5
     ]
@@ -93,7 +96,8 @@
     "description": "",
     "status": 4,
     "created_at": "2026-04-15T08:35:57.492Z",
-    "updated_at": "2026-04-15T08:36:02.169Z",
+    "updated_at": "2026-06-22T05:01:23.379Z",
+    "project": 1,
     "type": [
       5
     ]
@@ -107,7 +111,8 @@
     "description": "через ruff подкорректировать код",
     "status": 4,
     "created_at": "2026-04-21T08:37:00.031Z",
-    "updated_at": "2026-04-21T08:37:00.031Z",
+    "updated_at": "2026-06-22T05:01:23.380Z",
+    "project": 1,
     "type": [
       6
     ]
@@ -121,7 +126,8 @@
     "description": "сделать редактирование всех полей формы через админа",
     "status": 2,
     "created_at": "2026-06-15T08:39:55.394Z",
-    "updated_at": "2026-06-15T08:39:55.394Z",
+    "updated_at": "2026-06-22T05:01:23.381Z",
+    "project": 1,
     "type": [
       4
     ]
@@ -135,7 +141,8 @@
     "description": "Bug_1",
     "status": 1,
     "created_at": "2026-06-15T08:40:30.426Z",
-    "updated_at": "2026-06-15T08:40:30.426Z",
+    "updated_at": "2026-06-22T05:01:23.382Z",
+    "project": 1,
     "type": [
       5,
       6
@@ -150,7 +157,8 @@
     "description": "bug_2",
     "status": 1,
     "created_at": "2026-06-15T08:40:52.618Z",
-    "updated_at": "2026-06-15T08:40:52.618Z",
+    "updated_at": "2026-06-22T05:01:23.383Z",
+    "project": 1,
     "type": [
       4
     ]
@@ -164,7 +172,8 @@
     "description": "don",
     "status": 4,
     "created_at": "2026-06-03T08:41:19.858Z",
-    "updated_at": "2026-06-03T08:41:19.858Z",
+    "updated_at": "2026-06-22T05:01:23.384Z",
+    "project": 1,
     "type": [
       4,
       5,
@@ -180,7 +189,8 @@
     "description": "awdwadawd",
     "status": 4,
     "created_at": "2026-06-07T08:41:35.073Z",
-    "updated_at": "2026-06-07T08:41:35.073Z",
+    "updated_at": "2026-06-22T05:01:23.385Z",
+    "project": 1,
     "type": [
       4
     ]
@@ -194,7 +204,8 @@
     "description": "that should not be shown in third task",
     "status": 4,
     "created_at": "2026-06-01T08:43:20.033Z",
-    "updated_at": "2026-06-01T08:43:20.033Z",
+    "updated_at": "2026-06-22T05:01:23.386Z",
+    "project": 1,
     "type": [
       4,
       5
@@ -209,7 +220,8 @@
     "description": "Similar_1",
     "status": 2,
     "created_at": "2026-06-15T08:46:12.181Z",
-    "updated_at": "2026-06-15T08:46:12.181Z",
+    "updated_at": "2026-06-22T05:01:23.386Z",
+    "project": 1,
     "type": [
       6
     ]
@@ -223,7 +235,8 @@
     "description": "similiar_2",
     "status": 4,
     "created_at": "2026-05-27T08:46:38.762Z",
-    "updated_at": "2026-05-27T08:46:38.762Z",
+    "updated_at": "2026-06-22T05:01:23.387Z",
+    "project": 1,
     "type": [
       4
     ]
@@ -237,7 +250,8 @@
     "description": "Enhancment",
     "status": 2,
     "created_at": "2026-06-15T08:49:13.494Z",
-    "updated_at": "2026-06-15T08:49:13.494Z",
+    "updated_at": "2026-06-22T05:01:23.387Z",
+    "project": 1,
     "type": [
       6
     ]
@@ -251,11 +265,22 @@
     "description": "no_bug",
     "status": 4,
     "created_at": "2026-05-20T08:49:44.725Z",
-    "updated_at": "2026-05-20T08:49:44.725Z",
+    "updated_at": "2026-06-22T05:01:23.388Z",
+    "project": 1,
     "type": [
       5,
       6
     ]
+  }
+},
+{
+  "model": "issues.project",
+  "pk": 1,
+  "fields": {
+    "name": "Тестовый проект",
+    "description": "Тестовый проект для бонуса",
+    "start_date": "2026-01-01",
+    "end_date": null
   }
 },
 {
