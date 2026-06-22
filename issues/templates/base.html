@@ -19,6 +19,8 @@
                 <a class="navbar-brand" href="{% url 'projects_list' %}">
                    <img src="{% static 'images/monkey.jpg' %}" alt="logo" height="50" class="rounded">
                 </a>
+                {% block search %}
+                {% endblock %}
 
 
                 <div class="collapse navbar-collapse" id="navbarNav">
