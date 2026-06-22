@@ -9,10 +9,8 @@ class UpdateIssueView(UpdateView):
     template_name = "issues/issue_update.html"
     model = Issue
     form_class = IssueForm
-    success_url = reverse_lazy("main")
 
     def form_valid(self, form):
         issue = form.save()
         issue.type.set(form.cleaned_data['type'])
-        return redirect('main')
-
+        return redirect("project_details", pk=issue.project.pk)
