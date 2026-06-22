@@ -1,6 +1,6 @@
 from django.db import models
 
-class Projects(models.Model):
+class Project(models.Model):
     name = models.CharField(max_length=100, verbose_name="Название")
     description = models.TextField(max_length=1000, verbose_name="Описание")
     start_date = models.DateField(verbose_name="Дата начала")
