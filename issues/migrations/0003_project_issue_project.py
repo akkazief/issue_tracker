@@ -5,30 +5,52 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('issues', '0002_remove_issue_type_issue_type'),
+        ("issues", "0002_remove_issue_type_issue_type"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Project',
+            name="Project",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100, verbose_name='Название')),
-                ('description', models.TextField(max_length=1000, verbose_name='Описание')),
-                ('start_date', models.DateField(verbose_name='Дата начала')),
-                ('end_date', models.DateField(blank=True, null=True, verbose_name='Дата окончания')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100, verbose_name="Название")),
+                (
+                    "description",
+                    models.TextField(max_length=1000, verbose_name="Описание"),
+                ),
+                ("start_date", models.DateField(verbose_name="Дата начала")),
+                (
+                    "end_date",
+                    models.DateField(
+                        blank=True, null=True, verbose_name="Дата окончания"
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Проект',
-                'verbose_name_plural': 'Проекты',
-                'db_table': 'projects',
+                "verbose_name": "Проект",
+                "verbose_name_plural": "Проекты",
+                "db_table": "projects",
             },
         ),
         migrations.AddField(
-            model_name='issue',
-            name='project',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.RESTRICT, related_name='issues', to='issues.project', verbose_name='Проект'),
+            model_name="issue",
+            name="project",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.RESTRICT,
+                related_name="issues",
+                to="issues.project",
+                verbose_name="Проект",
+            ),
         ),
     ]

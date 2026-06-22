@@ -5,15 +5,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('issues', '0004_assign_default_project'),
+        ("issues", "0004_assign_default_project"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='issue',
-            name='project',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.RESTRICT, related_name='issues', to='issues.project', verbose_name='Проект'),
+            model_name="issue",
+            name="project",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.RESTRICT,
+                related_name="issues",
+                to="issues.project",
+                verbose_name="Проект",
+            ),
         ),
     ]

@@ -7,6 +7,6 @@ def validate_summary_length(value):
 
 
 def validate_exlude_words(value):
-    exclude_word = '404'
+    exclude_word = "404"
     if exclude_word in value.lower():
         raise ValidationError(f"Описание содержит недопустимое слово: '{exclude_word}'")

@@ -12,5 +12,5 @@ class UpdateIssueView(UpdateView):
 
     def form_valid(self, form):
         issue = form.save()
-        issue.type.set(form.cleaned_data['type'])
+        issue.type.set(form.cleaned_data["type"])
         return redirect("project_details", pk=issue.project.pk)

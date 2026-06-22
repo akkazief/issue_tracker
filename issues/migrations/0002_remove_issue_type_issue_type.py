@@ -4,19 +4,20 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('issues', '0001_initial'),
+        ("issues", "0001_initial"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='issue',
-            name='type',
+            model_name="issue",
+            name="type",
         ),
         migrations.AddField(
-            model_name='issue',
-            name='type',
-            field=models.ManyToManyField(related_name='issues', to='issues.type', verbose_name='Тип'),
+            model_name="issue",
+            name="type",
+            field=models.ManyToManyField(
+                related_name="issues", to="issues.type", verbose_name="Тип"
+            ),
         ),
     ]

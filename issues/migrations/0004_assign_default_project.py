@@ -3,8 +3,8 @@ from django.db import migrations
 
 
 def create_project_and_assign(apps, schema_editor):
-    Project = apps.get_model('issues', 'Project')
-    Issue = apps.get_model('issues', 'Issue')
+    Project = apps.get_model("issues", "Project")
+    Issue = apps.get_model("issues", "Issue")
 
     project = Project.objects.create(
         name="Тестовый проект",
@@ -18,8 +18,8 @@ def create_project_and_assign(apps, schema_editor):
 
 
 def rollback(apps, schema_editor):
-    Project = apps.get_model('issues', 'Project')
-    Issue = apps.get_model('issues', 'Issue')
+    Project = apps.get_model("issues", "Project")
+    Issue = apps.get_model("issues", "Issue")
 
     for issue in Issue.objects.all():
         issue.project = None
@@ -29,11 +29,8 @@ def rollback(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('issues', '0003_project_issue_project'),
+        ("issues", "0003_project_issue_project"),
     ]
 
-    operations = [
-        migrations.RunPython(create_project_and_assign, rollback)
-    ]
+    operations = [migrations.RunPython(create_project_and_assign, rollback)]
