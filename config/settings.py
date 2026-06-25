@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 import os
 from pathlib import Path
 import environ
+from django.conf.global_settings import LOGIN_REDIRECT_URL
 
 env = environ.Env()
 
@@ -130,3 +131,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = "/static/"
+
+LOGIN_REDIRECT_URL  = 'projects_list'
+LOGOUT_REDIRECT_URL = 'projects_list'
+
+

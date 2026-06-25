@@ -3,9 +3,11 @@ from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from issues.models.project import Project
 from issues.forms import IssueForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class CreateIssueView(CreateView):
+
+class CreateIssueView(LoginRequiredMixin, CreateView):
     template_name = "issues/create_issue.html"
     form_class = IssueForm
     def get_success_url(self):

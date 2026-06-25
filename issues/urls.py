@@ -23,7 +23,6 @@ urlpatterns = [
     path("projects/<int:pk>/update/", UpdateProjectView.as_view(), name="update_project"),
     path("projects/<int:pk>/delete/", DeleteProjectView.as_view(), name="delete_project"),
     # Задачи
-
     path("issues/<int:pk>/", IssuesDetailView.as_view(), name="issue_details"),
     path("projects/<int:pk>/issues/create/",CreateIssueView.as_view(),name="create_issue",),
     path("issues/<int:pk>/update/", UpdateIssueView.as_view(), name="update_issue"),
