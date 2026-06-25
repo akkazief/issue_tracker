@@ -1,11 +1,11 @@
 from django.shortcuts import redirect
 from django.views.generic import UpdateView
-from django.urls import reverse_lazy
 from issues.models import Issue
 from issues.forms import IssueForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class UpdateIssueView(UpdateView):
+class UpdateIssueView(LoginRequiredMixin, UpdateView):
     template_name = "issues/issue_update.html"
     model = Issue
     form_class = IssueForm

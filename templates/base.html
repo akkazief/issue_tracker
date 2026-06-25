@@ -33,7 +33,23 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{% url 'projects_list' %}">Главная</a>
                         </li>
+                        {% if request.user.is_authenticated %}
+                            <li>
+                                <a class="nav-link text-white">{{request.user}}</a>
+                            </li>
+                            <li class="nav-item d-flex align-items-center">
+                                <form action="{% url 'accounts:logout' %}" method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-sm btn-danger">Выйти</button>
+                                </form>
+                            </li>
+                        {% else %}
+                            <li>
+                                <a class="btn btn-secondary" href="{% url 'accounts:login' %}">Войти</a>
+                            </li>
+                        {% endif %}
                     </ul>
+
                 </div>
             </div>
         </nav>
