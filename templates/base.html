@@ -44,9 +44,12 @@
                                 </form>
                             </li>
                         {% else %}
-                            <li>
-                                <a class="btn btn-secondary" href="{% url 'accounts:login' %}">Войти</a>
-                            </li>
+                        <li class="mx-2">
+                            <a class="btn btn-secondary" href="{% url 'accounts:login' %}?next={{ request.path }}">Войти </a>
+                        </li>
+                        <li>
+                            <a class="btn btn-secondary" href="{% url 'accounts:register' %}?next={{ request.path }}">Регистрация </a>
+                        </li>
                         {% endif %}
                     </ul>
 
