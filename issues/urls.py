@@ -1,6 +1,5 @@
 from django.urls import path
 from issues.views.issues import (
-    IssuesView,
     IssuesDetailView,
     CreateIssueView,
     UpdateIssueView,
