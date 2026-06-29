@@ -16,6 +16,11 @@ class Project(models.Model):
         return self.name
 
     class Meta:
+
+        permissions = [
+            ("manage_members", "Can manage project members"),
+        ]
+
         db_table = "projects"
         verbose_name = "Проект"
         verbose_name_plural = "Проекты"
