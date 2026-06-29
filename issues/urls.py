@@ -14,6 +14,11 @@ from issues.views.projects import (
     DeleteProjectView,
 )
 
+from issues.views.members import (
+    ProjectMembersListView,
+    ProjectMembersView
+)
+
 urlpatterns = [
     # Проекты
     path("", ProjectsView.as_view(), name="projects_list"),
@@ -21,6 +26,9 @@ urlpatterns = [
     path("projects/create/", CreateProjectView.as_view(), name="create_project"),
     path("projects/<int:pk>/update/", UpdateProjectView.as_view(), name="update_project"),
     path("projects/<int:pk>/delete/", DeleteProjectView.as_view(), name="delete_project"),
+    # Участники проектов
+    path("projects/<int:pk>/members/", ProjectMembersView.as_view(), name="project_members"),
+    path("projects/<int:pk>/members/list", ProjectMembersListView.as_view(), name="project_members_list"),
     # Задачи
     path("issues/<int:pk>/", IssuesDetailView.as_view(), name="issue_details"),
     path("projects/<int:pk>/issues/create/",CreateIssueView.as_view(),name="create_issue",),

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Участники проекта «{{ project.title }}»</h2>
+
+    <ul class="list-group mt-3">
+        {% for member in members %}
+            <li class="list-group-item">
+                {{ member.get_full_name|default:member.username }}
+            </li>
+        {% empty %}
+            <li class="list-group-item text-muted">Нет участников</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'project_members' pk=project.pk %}" class="btn btn-primary mt-3">
+        Управление участниками
+    </a>
+</div>
+{% endblock %}      

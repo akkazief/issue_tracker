@@ -10,6 +10,8 @@
     <p>Начало: {{ project.start_date }}</p>
     <p>Окончание: {{ project.end_date }}</p>
 
+<h4><a href="{% url 'project_members_list' project.pk %}">Участники проекта</a></h4>
+
     <h4>Задачи проекта</h4>
     <table class="table table-striped table-bordered text-center">
         <thead>
