@@ -13,7 +13,7 @@ class Issue(models.Model):
     type = models.ManyToManyField(Type, related_name="issues", verbose_name="Тип")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Время создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Время обновления")
-    project = models.ForeignKey("issues.Project",on_delete=models.RESTRICT,
+    project = models.ForeignKey("issues.Project",on_delete=models.CASCADE,
                                 verbose_name="Проект", related_name="issues")
 
     def __str__(self):

@@ -11,8 +11,10 @@ class ProjectForm(forms.ModelForm):
             "description": forms.Textarea(attrs={"class": "form-control",
                         "placeholder": "Описание проекта",}),
             "start_date": forms.DateInput(attrs={"class": "form-control",
-                        "placeholder": "Начало проекта",}),
+                        "placeholder": "Начало проекта",
+                        "type": "date",}),
             "end_date": forms.DateInput(attrs={"class": "form-control",
-                        "placeholder": "Окончание проекта",}),
+                        "placeholder": "Окончание проекта",
+                        "type": "date",})
         }
 
