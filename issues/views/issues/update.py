@@ -3,9 +3,13 @@ from django.views.generic import UpdateView
 from issues.models import Issue
 from issues.forms import IssueForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from issues.mixins import MemberRequiredMixin
 
 
-class UpdateIssueView(LoginRequiredMixin, UpdateView):
+
+class UpdateIssueView(MemberRequiredMixin,LoginRequiredMixin, UpdateView):
+    permission_required = 'issues.change_issue'
+
     template_name = "issues/issue_update.html"
     model = Issue
     form_class = IssueForm

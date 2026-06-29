@@ -5,10 +5,18 @@ from django.views import View
 from issues.forms import ProjectMembersForm
 from issues.models import Project
 
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+from issues.mixins import MemberRequiredMixin
+
+
+
 User = get_user_model()
 
 
-class ProjectMembersView(View):
+class ProjectMembersView(MemberRequiredMixin,LoginRequiredMixin,View):
+    permission_required = 'issues.manage_members'
+
     def get(self, request, pk):
         project = get_object_or_404(Project, pk=pk)
         form = ProjectMembersForm(initial={"members": project.members.all()})

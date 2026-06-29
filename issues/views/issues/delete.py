@@ -4,9 +4,13 @@ from django.urls import reverse_lazy
 
 from issues.models import Issue
 from django.contrib.auth.mixins import LoginRequiredMixin
+from issues.mixins import MemberRequiredMixin
 
 
-class DeleteIssueView(LoginRequiredMixin, DeleteView):
+
+class DeleteIssueView(MemberRequiredMixin,LoginRequiredMixin, DeleteView):
+    permission_required = 'issues.delete_issue'
+
     template_name = "issues/delete_issue.html"
     model = Issue
     context_object_name = "issue"

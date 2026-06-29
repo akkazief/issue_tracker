@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from issues.models import Issue, Status, Type, Project
 
+
 class IssueAdmin(admin.ModelAdmin):
     list_display = ("id", "summary", "status", "created_at", "updated_at")
     list_filter = ("status", "type")
