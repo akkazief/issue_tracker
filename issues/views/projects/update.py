@@ -3,9 +3,13 @@ from django.urls import reverse_lazy
 from issues.models import Project
 from issues.forms import ProjectForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from issues.mixins import MemberRequiredMixin
 
 
-class UpdateProjectView(LoginRequiredMixin, UpdateView):
+
+class UpdateProjectView(MemberRequiredMixin, LoginRequiredMixin, UpdateView):
+    permission_required = "issues.change_project"
+
     template_name = "projects/project_update.html"
     model = Project
     form_class = ProjectForm

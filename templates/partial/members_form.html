@@ -1,0 +1,8 @@
+{% load django_bootstrap5 %}
+
+<form method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a class="btn btn-secondary"    href="{% url 'project_members_list' project.pk %}">Отмена</a>
+</form>
